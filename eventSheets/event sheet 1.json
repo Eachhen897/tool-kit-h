@@ -1,5 +1,215 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "General",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 161812251018536,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Players",
+									"sid": 945671836386049,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 691005578520962
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 659339605977381,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Players",
+									"sid": 651497203843178,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 131820514077531
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 893704150898283,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Players",
+									"sid": 533052992533310,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 286643685940362
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 570625754597738
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "Players",
+									"sid": 743697379223661
+								}
+							],
+							"sid": 936007424609274
+						}
+					],
+					"sid": 152877055272807
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Melee",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 801809164402717,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "MeleePlayer",
+									"sid": 253007687782658,
+									"parameters": {
+										"object": "HurtBox",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 862191455828601,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HurtBox",
+									"sid": 191894614050378
+								}
+							],
+							"sid": 940765224280567
+						}
+					],
+					"sid": 832022858366017
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Bounce",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 155045687441934
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Ranged",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 143503453412685,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "RangedPlayer",
+									"sid": 429262818094267,
+									"parameters": {
+										"object": "beam",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 948181880911813
+						}
+					],
+					"sid": 196522125907611
+				}
+			],
+			"sid": 885099253226256
+		}
+	],
 	"sid": 991865712413623
 }
