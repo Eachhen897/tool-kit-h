@@ -23,6 +23,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -63,8 +71,13 @@
 			"Keyboard",
 			"Platform",
 			"RangedPlayer",
-			"beam",
-			"HurtBox"
+			"HurtBox",
+			"Enemy",
+			"Bullet",
+			"PlayerSpawn",
+			"BuMelee",
+			"BuRanged",
+			"BuBounce"
 		],
 		"subfolders": []
 	},

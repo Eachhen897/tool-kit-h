@@ -1,40 +1,29 @@
 {
-	"name": "beam",
+	"name": "PlayerSpawn",
 	"plugin-id": "Sprite",
-	"sid": 459973715469051,
+	"sid": 468085787960902,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 966436614552905
-		},
-		{
-			"behaviorId": "Fade",
-			"name": "Fade",
-			"sid": 970442456885974
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 240,
+						"height": 240,
+						"originX": 0.5041666666666667,
+						"originY": 0.49583333333333335,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9257486,
+						"imageSpriteId": 7430102,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 228718827459261,
+				"sid": 195341852423369,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

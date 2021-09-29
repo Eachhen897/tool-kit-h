@@ -8,6 +8,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 785966171006995
+		},
+		{
+			"name": "Spawn",
+			"type": "number",
+			"desc": "",
+			"sid": 932663063246292
 		}
 	],
 	"behaviorTypes": [

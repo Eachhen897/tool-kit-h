@@ -1,7 +1,7 @@
 {
-	"name": "HurtBox",
+	"name": "Enemy",
 	"plugin-id": "Sprite",
-	"sid": 301325789474917,
+	"sid": 728908269399640,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,31 +11,31 @@
 			{
 				"frames": [
 					{
-						"width": 38,
-						"height": 97,
-						"originX": 0,
+						"width": 57,
+						"height": 57,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9862549,
+						"imageSpriteId": 5198755,
 						"collisionPoly": {
 							"points": [
-								0.02631578947368421,
-								0.010309278350515464,
-								0.9736842105263158,
-								0.010309278350515464,
-								0.9736842105263158,
-								0.9896907216494846,
-								0.02631578947368421,
-								0.9896907216494846
+								0.017543859649122806,
+								0.017543859649122806,
+								0.9824561403508771,
+								0.017543859649122806,
+								0.9824561403508771,
+								0.9824561403508771,
+								0.017543859649122806,
+								0.9824561403508771
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 764105757816122,
+				"sid": 611978167213091,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

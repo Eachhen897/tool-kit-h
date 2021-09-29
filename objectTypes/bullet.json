@@ -1,41 +1,52 @@
 {
-	"name": "HurtBox",
+	"name": "Bullet",
 	"plugin-id": "Sprite",
-	"sid": 301325789474917,
+	"sid": 995522842058953,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 436871212289698
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 742019516097049
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 38,
-						"height": 97,
+						"width": 14,
+						"height": 4,
 						"originX": 0,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9862549,
+						"imageSpriteId": 7699353,
 						"collisionPoly": {
 							"points": [
-								0.02631578947368421,
-								0.010309278350515464,
-								0.9736842105263158,
-								0.010309278350515464,
-								0.9736842105263158,
-								0.9896907216494846,
-								0.02631578947368421,
-								0.9896907216494846
+								0.07142857142857142,
+								0.25,
+								0.9285714285714286,
+								0.25,
+								0.9285714285714286,
+								0.75,
+								0.07142857142857142,
+								0.75
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 764105757816122,
+				"sid": 771355186012991,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

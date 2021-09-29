@@ -9,6 +9,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "Spawn",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 506068785230049
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "General",
@@ -19,9 +29,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
+									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 161812251018536,
+									"sid": 856049189961882,
 									"parameters": {
 										"key": 87
 									}
@@ -44,9 +54,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
+									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 659339605977381,
+									"sid": 550060871622092,
 									"parameters": {
 										"key": 65
 									}
@@ -69,9 +79,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
+									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 893704150898283,
+									"sid": 968934780254120,
 									"parameters": {
 										"key": 68
 									}
@@ -107,6 +117,119 @@
 								}
 							],
 							"sid": 936007424609274
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 437736027387685
+								}
+							],
+							"actions": [],
+							"sid": 818482371277672,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Players",
+											"sid": 743917460961823,
+											"parameters": {
+												"instance-variable": "Spawn",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "PlayerSpawn",
+											"sid": 205080784811019,
+											"parameters": {
+												"object": "RangedPlayer",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										}
+									],
+									"sid": 417715135166792
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Players",
+											"sid": 739264081240449,
+											"parameters": {
+												"instance-variable": "Spawn",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "PlayerSpawn",
+											"sid": 101771808064426,
+											"parameters": {
+												"object": "MeleePlayer",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										}
+									],
+									"sid": 709708219193964
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Players",
+											"sid": 838872199257797,
+											"parameters": {
+												"instance-variable": "Spawn",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "PlayerSpawn",
+											"sid": 933264370284643,
+											"parameters": {
+												"object": "BouncePlayer",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										}
+									],
+									"sid": 285609743630148
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "To Spawn a Ranged Player, set the global Spawn Variable to 0"
+						},
+						{
+							"eventType": "comment",
+							"text": "To Spawn a Melee Player, set the global Spawn Variable to 1"
+						},
+						{
+							"eventType": "comment",
+							"text": "To Spawn a Bounce Player (Jump on top of enemy to kill them), set the global Spawn Variable to 2"
 						}
 					],
 					"sid": 152877055272807
@@ -145,9 +268,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 862191455828601,
+									"sid": 942267281575022,
 									"parameters": {
-										"seconds": "0.5"
+										"seconds": "0.05"
 									}
 								},
 								{
@@ -157,6 +280,49 @@
 								}
 							],
 							"sid": 940765224280567
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 731072610040068
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "HurtBox",
+									"sid": 311497642640210,
+									"parameters": {
+										"object": "MeleePlayer",
+										"image-point-optional": "0"
+									}
+								}
+							],
+							"sid": 625016470001608
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HurtBox",
+									"sid": 725365230760913,
+									"parameters": {
+										"object": "Enemy"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemy",
+									"sid": 365331515346261
+								}
+							],
+							"sid": 910430656079720
 						}
 					],
 					"sid": 832022858366017
@@ -193,16 +359,55 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "RangedPlayer",
-									"sid": 429262818094267,
+									"sid": 136719864514124,
 									"parameters": {
-										"object": "beam",
+										"object": "Bullet",
 										"layer": "0",
 										"image-point": "0",
 										"create-hierarchy": false
 									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Bullet",
+									"sid": 455253194741481,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Bullet",
+									"sid": 805647210862562,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "400"
+									}
 								}
 							],
 							"sid": 948181880911813
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 113377415844298,
+									"parameters": {
+										"object": "Enemy"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemy",
+									"sid": 408718088833506
+								}
+							],
+							"sid": 468776782456577
 						}
 					],
 					"sid": 196522125907611
