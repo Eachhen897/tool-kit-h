@@ -372,17 +372,17 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "HurtBox",
-									"sid": 725365230760913,
+									"sid": 449746807868523,
 									"parameters": {
-										"object": "Enemy"
+										"object": "Enemies"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "Enemy",
-									"sid": 365331515346261
+									"objectClass": "Enemies",
+									"sid": 886840722956768
 								}
 							],
 							"sid": 910430656079720
@@ -488,104 +488,207 @@
 			"title": "Hazards",
 			"description": "You touch this your character will die",
 			"isActiveOnStart": true,
-			"children": [],
-			"sid": 722888142746737
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Hazards",
-					"sid": 426094727581525,
-					"parameters": {
-						"object": "Players"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 766435562896509,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 923024512313305,
+							"id": "on-collision-with-another-object",
+							"objectClass": "Hazards",
+							"sid": 139011675189214,
 							"parameters": {
-								"variable": "Health",
-								"comparison": 3,
-								"value": "1"
+								"object": "Players"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 826985946408205,
+					"children": [
 						{
-							"id": "stop-all",
-							"objectClass": "Audio",
-							"sid": 683400388944832
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 402555996173187,
+									"parameters": {
+										"variable": "Health",
+										"comparison": 3,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 272151717337215
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 646959630409363
+								}
+							],
+							"sid": 435421412994018
 						},
 						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 284542299233296
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 927007295369302,
+									"parameters": {
+										"variable": "Health",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 415842218305148,
+									"parameters": {
+										"variable": "Health",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "Players",
+									"sid": 344231550285507,
+									"parameters": {
+										"object": "PlayerSpawn",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Players",
+									"sid": 395932373576599,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "2"
+									}
+								}
+							],
+							"sid": 350560224921250
 						}
-					],
-					"sid": 341886743817457
+					]
 				},
+				{
+					"eventType": "comment",
+					"text": "Jump onto a hazard with any players, and it'll respawn you at the spawn point"
+				}
+			],
+			"sid": 722888142746737
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemies",
+			"description": "You get hit by this you'll die",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 856918077014776,
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemies",
+							"sid": 272624049719799,
 							"parameters": {
-								"variable": "Health",
-								"comparison": 4,
-								"value": "1"
+								"object": "Players"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 897774451341565,
+					"children": [
 						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 128294969348944,
-							"parameters": {
-								"variable": "Health",
-								"value": "1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 793713565881996,
+									"parameters": {
+										"variable": "Health",
+										"comparison": 3,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 963815264942019
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 140722435547197
+								}
+							],
+							"sid": 515034593967241
 						},
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "Players",
-							"sid": 577896615751747,
-							"parameters": {
-								"object": "PlayerSpawn",
-								"image-point-optional": "0"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "Players",
-							"sid": 366665887539491,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "2"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 775224962550270,
+									"parameters": {
+										"variable": "Health",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 532986454747442,
+									"parameters": {
+										"variable": "Health",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "Players",
+									"sid": 654398032919439,
+									"parameters": {
+										"object": "PlayerSpawn",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "Players",
+									"sid": 883886828662801,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "2"
+									}
+								}
+							],
+							"sid": 238423687330682
 						}
-					],
-					"sid": 735213916030584
+					]
 				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "Jump onto a hazard with any players, and it'll respawn you at the spawn point"
+			],
+			"sid": 356561616048768
 		}
 	],
 	"sid": 991865712413623

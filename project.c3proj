@@ -125,7 +125,8 @@
 	"families": {
 		"items": [
 			"Players",
-			"Hazards"
+			"Hazards",
+			"Enemies"
 		],
 		"subfolders": []
 	},
