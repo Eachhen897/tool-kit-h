@@ -126,7 +126,9 @@
 			"MeleePlayer",
 			"Hazard",
 			"Collectable1",
-			"CoinsCollectedText"
+			"CoinsCollectedText",
+			"HealthCollectable",
+			"HealthCollectedText"
 		],
 		"subfolders": []
 	},

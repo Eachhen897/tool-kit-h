@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "Health",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "5",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -29,99 +29,9 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Collectable1",
-							"sid": 344141835587810,
-							"parameters": {
-								"object": "MeleePlayer"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Collectable1",
-							"sid": 480944841935754
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 773951798741528,
-							"parameters": {
-								"variable": "CoinsCollected",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 972532974226300
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Collectable1",
-							"sid": 417061271165891,
-							"parameters": {
-								"object": "BouncePlayer"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Collectable1",
-							"sid": 521362297154408
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 678455162593783,
-							"parameters": {
-								"variable": "CoinsCollected",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 376069701964759
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Collectable1",
-							"sid": 554998007788537,
-							"parameters": {
-								"object": "RangedPlayer"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Collectable1",
-							"sid": 308688726569006
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 785422196366495,
-							"parameters": {
-								"variable": "CoinsCollected",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 647653414601488
-				},
-				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Coin Collected Score Update",
+					"title": "Collected Score Update",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -131,23 +41,240 @@
 								{
 									"id": "every-tick",
 									"objectClass": "System",
-									"sid": 452159122443539
+									"sid": 594769694877761
 								}
 							],
 							"actions": [
 								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 923309959265178,
+									"parameters": {
+										"variable": "Health",
+										"value": "Players.Health"
+									}
+								},
+								{
 									"id": "set-text",
 									"objectClass": "CoinsCollectedText",
-									"sid": 558428190685042,
+									"sid": 946598058513221,
 									"parameters": {
 										"text": "CoinsCollected"
 									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "HealthCollectedText",
+									"sid": 271014502665297,
+									"parameters": {
+										"text": "Health"
+									}
 								}
 							],
-							"sid": 562389021668137
+							"sid": 972478389623515
 						}
 					],
-					"sid": 305415905197223
+					"sid": 526850353202672
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Coin Collectable",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Collectable1",
+									"sid": 383119127264530,
+									"parameters": {
+										"object": "MeleePlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Collectable1",
+									"sid": 499752158084564
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 337477394708044,
+									"parameters": {
+										"variable": "CoinsCollected",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 854436498634563
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Collectable1",
+									"sid": 966825481409871,
+									"parameters": {
+										"object": "BouncePlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Collectable1",
+									"sid": 184637268746329
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 525849474317952,
+									"parameters": {
+										"variable": "CoinsCollected",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 385688413251558
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Collectable1",
+									"sid": 263304503773003,
+									"parameters": {
+										"object": "RangedPlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Collectable1",
+									"sid": 346017589152374
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 721705305950535,
+									"parameters": {
+										"variable": "CoinsCollected",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 869252924543824
+						}
+					],
+					"sid": 453885727777542
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Health Collectable",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HealthCollectable",
+									"sid": 854056654575913,
+									"parameters": {
+										"object": "MeleePlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "HealthCollectable",
+									"sid": 108719335829325
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "MeleePlayer",
+									"sid": 389411150843759,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 336081425582499
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HealthCollectable",
+									"sid": 453014803578119,
+									"parameters": {
+										"object": "BouncePlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "HealthCollectable",
+									"sid": 650722034418163
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "BouncePlayer",
+									"sid": 367429414668030,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 508942969422415
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HealthCollectable",
+									"sid": 734296488970859,
+									"parameters": {
+										"object": "RangedPlayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "HealthCollectable",
+									"sid": 378109495302317
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "RangedPlayer",
+									"sid": 240064108427538,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 958092283076867
+						}
+					],
+					"sid": 512682781334069
 				}
 			],
 			"sid": 780690119435529
