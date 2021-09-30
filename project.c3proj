@@ -47,6 +47,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -116,7 +124,9 @@
 			"Audio",
 			"Mouse",
 			"MeleePlayer",
-			"Hazard"
+			"Hazard",
+			"Collectable1",
+			"CoinsCollectedText"
 		],
 		"subfolders": []
 	},

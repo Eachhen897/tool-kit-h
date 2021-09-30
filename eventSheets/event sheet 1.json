@@ -12,6 +12,147 @@
 			"sid": 322542018477910
 		},
 		{
+			"eventType": "variable",
+			"name": "CoinsCollected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 590563463811522
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collectables ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Collectable1",
+							"sid": 344141835587810,
+							"parameters": {
+								"object": "MeleePlayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Collectable1",
+							"sid": 480944841935754
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 773951798741528,
+							"parameters": {
+								"variable": "CoinsCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 972532974226300
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Collectable1",
+							"sid": 417061271165891,
+							"parameters": {
+								"object": "BouncePlayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Collectable1",
+							"sid": 521362297154408
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 678455162593783,
+							"parameters": {
+								"variable": "CoinsCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 376069701964759
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Collectable1",
+							"sid": 554998007788537,
+							"parameters": {
+								"object": "RangedPlayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Collectable1",
+							"sid": 308688726569006
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 785422196366495,
+							"parameters": {
+								"variable": "CoinsCollected",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 647653414601488
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Coin Collected Score Update",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 452159122443539
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "CoinsCollectedText",
+									"sid": 558428190685042,
+									"parameters": {
+										"text": "CoinsCollected"
+									}
+								}
+							],
+							"sid": 562389021668137
+						}
+					],
+					"sid": 305415905197223
+				}
+			],
+			"sid": 780690119435529
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Player",
