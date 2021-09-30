@@ -212,6 +212,22 @@
 									"parameters": {
 										"control": "left"
 									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Players",
+									"sid": 244052456358422,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "HurtBox",
+									"sid": 243884002200355,
+									"parameters": {
+										"state": "mirrored"
+									}
 								}
 							],
 							"sid": 131820514077531
@@ -236,6 +252,22 @@
 									"behaviorType": "Platform",
 									"parameters": {
 										"control": "right"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Players",
+									"sid": 618719852152950,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "HurtBox",
+									"sid": 614810169610322,
+									"parameters": {
+										"state": "not-mirrored"
 									}
 								}
 							],
@@ -465,6 +497,7 @@
 									"id": "set-visible",
 									"objectClass": "HurtBox",
 									"sid": 283077098713593,
+									"disabled": true,
 									"parameters": {
 										"visibility": "invisible"
 									}
