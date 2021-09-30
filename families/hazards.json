@@ -1,0 +1,15 @@
+{
+	"name": "Hazards",
+	"plugin-id": "Sprite",
+	"sid": 854327808366359,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"smallspikes",
+		"Spike",
+		"Smallwoodspikes",
+		"WoodSpikes",
+		"Hazard"
+	]
+}

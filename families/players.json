@@ -21,12 +21,22 @@
 			"behaviorId": "Platform",
 			"name": "Platform",
 			"sid": 809407847473370
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 951951175176974
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 948593145314313
 		}
 	],
 	"effectTypes": [],
 	"members": [
-		"MeleePlayer",
 		"BouncePlayer",
-		"RangedPlayer"
+		"RangedPlayer",
+		"MeleePlayer"
 	]
 }

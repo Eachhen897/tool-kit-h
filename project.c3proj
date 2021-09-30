@@ -31,6 +31,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -61,12 +77,27 @@
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
 		}
 	],
 	"uniqueId": "z0alyj1m5lh",
 	"objectTypes": {
 		"items": [
-			"MeleePlayer",
 			"BouncePlayer",
 			"Keyboard",
 			"Platform",
@@ -81,7 +112,11 @@
 			"smallspikes",
 			"Smallwoodspikes",
 			"Spike",
-			"WoodSpikes"
+			"WoodSpikes",
+			"Audio",
+			"Mouse",
+			"MeleePlayer",
+			"Hazard"
 		],
 		"subfolders": []
 	},
@@ -89,7 +124,8 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"Players"
+			"Players",
+			"Hazards"
 		],
 		"subfolders": []
 	},

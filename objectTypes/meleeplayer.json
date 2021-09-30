@@ -1,7 +1,7 @@
 {
 	"name": "MeleePlayer",
 	"plugin-id": "Sprite",
-	"sid": 534553988396981,
+	"sid": 741678982925558,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,19 +11,38 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
-						"originX": 1,
+						"width": 59,
+						"height": 59,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9787066,
+						"imageSpriteId": 6759912,
+						"collisionPoly": {
+							"points": [
+								0.01694915254237288,
+								0.01694915254237288,
+								0.9830508474576272,
+								0.01694915254237288,
+								0.9830508474576272,
+								0.9830508474576272,
+								0.01694915254237288,
+								0.9830508474576272
+							]
+						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Attack",
+								"x": 1,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					}
 				],
-				"sid": 762274401226413,
+				"sid": 621602850439954,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

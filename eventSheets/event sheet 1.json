@@ -2,22 +2,22 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Health",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 322542018477910
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Player",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "variable",
-					"name": "Spawn",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 506068785230049
-				},
 				{
 					"eventType": "group",
 					"disabled": false,
@@ -114,6 +114,15 @@
 									"id": "move-to-top",
 									"objectClass": "Players",
 									"sid": 743697379223661
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 313221212966646,
+									"parameters": {
+										"variable": "Health",
+										"value": "Players.Health"
+									}
 								}
 							],
 							"sid": 936007424609274
@@ -122,114 +131,156 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 437736027387685
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 542626632563904,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "BuBounce"
+									}
 								}
 							],
-							"actions": [],
-							"sid": 818482371277672,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Players",
-											"sid": 743917460961823,
-											"parameters": {
-												"instance-variable": "Spawn",
-												"comparison": 0,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "spawn-another-object",
-											"objectClass": "PlayerSpawn",
-											"sid": 205080784811019,
-											"parameters": {
-												"object": "RangedPlayer",
-												"layer": "0",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										}
-									],
-									"sid": 417715135166792
+									"id": "destroy",
+									"objectClass": "RangedPlayer",
+									"sid": 395682635090912
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Players",
-											"sid": 739264081240449,
-											"parameters": {
-												"instance-variable": "Spawn",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "spawn-another-object",
-											"objectClass": "PlayerSpawn",
-											"sid": 101771808064426,
-											"parameters": {
-												"object": "MeleePlayer",
-												"layer": "0",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										}
-									],
-									"sid": 709708219193964
+									"id": "destroy",
+									"objectClass": "BouncePlayer",
+									"sid": 226157437064064
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Players",
-											"sid": 838872199257797,
-											"parameters": {
-												"instance-variable": "Spawn",
-												"comparison": 0,
-												"value": "2"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "spawn-another-object",
-											"objectClass": "PlayerSpawn",
-											"sid": 933264370284643,
-											"parameters": {
-												"object": "BouncePlayer",
-												"layer": "0",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										}
-									],
-									"sid": 285609743630148
+									"id": "spawn-another-object",
+									"objectClass": "PlayerSpawn",
+									"sid": 522771869690675,
+									"parameters": {
+										"object": "BouncePlayer",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-unfocused",
+									"objectClass": "BuBounce",
+									"sid": 649618748695667
 								}
-							]
+							],
+							"sid": 167332788755073,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
-							"text": "To Spawn a Ranged Player, set the global Spawn Variable to 0"
+							"text": "To Spawn a Bounce Player (Jump on top of enemy to kill them), click the bounce button"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 676001314467840,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "BuRanged"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "MeleePlayer",
+									"sid": 305146358078639
+								},
+								{
+									"id": "destroy",
+									"objectClass": "RangedPlayer",
+									"sid": 136081112119365
+								},
+								{
+									"id": "destroy",
+									"objectClass": "BouncePlayer",
+									"sid": 563830268787168
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "PlayerSpawn",
+									"sid": 672562503579852,
+									"parameters": {
+										"object": "RangedPlayer",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-unfocused",
+									"objectClass": "BuRanged",
+									"sid": 302484299661422
+								}
+							],
+							"sid": 818482371277672
 						},
 						{
 							"eventType": "comment",
-							"text": "To Spawn a Melee Player, set the global Spawn Variable to 1"
+							"text": "To Spawn a Ranged Player, click the ranged button"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 846968741441635,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "BuMelee"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "MeleePlayer",
+									"sid": 682720989487857
+								},
+								{
+									"id": "destroy",
+									"objectClass": "RangedPlayer",
+									"sid": 120368379534646
+								},
+								{
+									"id": "destroy",
+									"objectClass": "BouncePlayer",
+									"sid": 513747047979795
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "PlayerSpawn",
+									"sid": 249506583282438,
+									"parameters": {
+										"object": "MeleePlayer",
+										"layer": "0",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-unfocused",
+									"objectClass": "BuMelee",
+									"sid": 685817139780727
+								}
+							],
+							"sid": 860205312025503
 						},
 						{
 							"eventType": "comment",
-							"text": "To Spawn a Bounce Player (Jump on top of enemy to kill them), set the global Spawn Variable to 2"
+							"text": "To Spawn a Melee Player, click the melee button"
 						}
 					],
 					"sid": 152877055272807
@@ -241,6 +292,10 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Press space to turn on the hurt box, which kills an enemy when you hit it."
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -257,12 +312,20 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "MeleePlayer",
-									"sid": 253007687782658,
+									"sid": 706922605450719,
 									"parameters": {
 										"object": "HurtBox",
 										"layer": "0",
-										"image-point": "0",
+										"image-point": "1",
 										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "HurtBox",
+									"sid": 283077098713593,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								},
 								{
@@ -294,10 +357,10 @@
 								{
 									"id": "set-position-to-another-object",
 									"objectClass": "HurtBox",
-									"sid": 311497642640210,
+									"sid": 646483720426536,
 									"parameters": {
 										"object": "MeleePlayer",
-										"image-point-optional": "0"
+										"image-point-optional": "1"
 									}
 								}
 							],
@@ -343,6 +406,10 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Press Space to spawn a bullet, which kills an enemy when it reaches it."
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -414,6 +481,111 @@
 				}
 			],
 			"sid": 885099253226256
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Hazards",
+			"description": "You touch this your character will die",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 722888142746737
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Hazards",
+					"sid": 426094727581525,
+					"parameters": {
+						"object": "Players"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 766435562896509,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 923024512313305,
+							"parameters": {
+								"variable": "Health",
+								"comparison": 3,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 683400388944832
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 284542299233296
+						}
+					],
+					"sid": 341886743817457
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 856918077014776,
+							"parameters": {
+								"variable": "Health",
+								"comparison": 4,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 128294969348944,
+							"parameters": {
+								"variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Players",
+							"sid": 577896615751747,
+							"parameters": {
+								"object": "PlayerSpawn",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Players",
+							"sid": 366665887539491,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "2"
+							}
+						}
+					],
+					"sid": 735213916030584
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Jump onto a hazard with any players, and it'll respawn you at the spawn point"
 		}
 	],
 	"sid": 991865712413623
