@@ -1,10 +1,16 @@
 {
-	"name": "Hazard",
+	"name": "Portal1",
 	"plugin-id": "Sprite",
-	"sid": 210352692313825,
+	"sid": 477598459360592,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 192881568211207
+		}
+	],
 	"effectTypes": [
 		{
 			"effectId": "swirl",
@@ -20,19 +26,31 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
+						"width": 162,
+						"height": 212,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7488419,
+						"imageSpriteId": 800226,
+						"collisionPoly": {
+							"points": [
+								0.003968253968253968,
+								0.003968253968253968,
+								0.996031746031746,
+								0.003968253968253968,
+								0.996031746031746,
+								0.996031746031746,
+								0.003968253968253968,
+								0.996031746031746
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 806855739410749,
+				"sid": 682925444792654,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

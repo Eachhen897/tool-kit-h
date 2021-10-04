@@ -612,7 +612,7 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "MeleePlayer",
-									"sid": 706922605450719,
+									"sid": 531230059658926,
 									"parameters": {
 										"object": "HurtBox",
 										"layer": "0",
@@ -1008,6 +1008,106 @@
 				}
 			],
 			"sid": 684375146269694
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "RangedPlayer",
+					"sid": 186559298807440,
+					"parameters": {
+						"object": "Portal1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "RangedPlayer",
+					"sid": 412329355993696,
+					"parameters": {
+						"object": "Portal3",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 292888904986243
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "MeleePlayer",
+					"sid": 681986640156174,
+					"parameters": {
+						"object": "Portal1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "MeleePlayer",
+					"sid": 451942665871753,
+					"parameters": {
+						"object": "Portal3",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 988359554288832
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "RangedPlayer",
+					"sid": 426319379022270,
+					"parameters": {
+						"object": "Portal2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "RangedPlayer",
+					"sid": 354237238974082,
+					"parameters": {
+						"object": "Portal4",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 825520180130909
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "MeleePlayer",
+					"sid": 303247824674227,
+					"parameters": {
+						"object": "Portal2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "MeleePlayer",
+					"sid": 371947508064784,
+					"parameters": {
+						"object": "Portal4",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 603380905926434
 		}
 	],
 	"sid": 991865712413623
