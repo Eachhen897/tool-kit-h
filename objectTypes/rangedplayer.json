@@ -19,8 +19,8 @@
 					{
 						"width": 57,
 						"height": 57,
-						"originX": 0.9824561403508771,
-						"originY": 0.7719298245614035,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -38,6 +38,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "BulletPoint",
+								"x": 0.9824561403508771,
+								"y": 0.7719298245614035
+							}
+						],
 						"duration": 1
 					}
 				],

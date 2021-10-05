@@ -355,6 +355,14 @@
 									"parameters": {
 										"state": "mirrored"
 									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Bullet",
+									"sid": 719588647420476,
+									"parameters": {
+										"state": "mirrored"
+									}
 								}
 							],
 							"sid": 131820514077531
@@ -393,6 +401,14 @@
 									"id": "set-mirrored",
 									"objectClass": "HurtBox",
 									"sid": 614810169610322,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Bullet",
+									"sid": 643875811045987,
 									"parameters": {
 										"state": "not-mirrored"
 									}
@@ -687,13 +703,45 @@
 								}
 							],
 							"sid": 910430656079720
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "MeleePlayer",
+									"sid": 644525345540807,
+									"parameters": {
+										"object": "CharacterChange"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Players",
+									"sid": 812750003777457
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "CharacterChangeSpawnPoint",
+									"sid": 981234417518270,
+									"parameters": {
+										"object": "RangedPlayer",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 702433175438174
 						}
 					],
 					"sid": 832022858366017
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "Bounce",
 					"description": "",
 					"isActiveOnStart": true,
@@ -727,11 +775,11 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "RangedPlayer",
-									"sid": 136719864514124,
+									"sid": 583518051756864,
 									"parameters": {
 										"object": "Bullet",
 										"layer": "0",
-										"image-point": "0",
+										"image-point": "1",
 										"create-hierarchy": false
 									}
 								},
@@ -752,6 +800,19 @@
 									"parameters": {
 										"speed": "400"
 									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 846758418475168,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 763272920916399
 								}
 							],
 							"sid": 948181880911813
@@ -773,9 +834,157 @@
 									"id": "destroy",
 									"objectClass": "Enemy",
 									"sid": 408718088833506
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 342685638308540
 								}
 							],
 							"sid": 468776782456577
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 557744571947182,
+									"parameters": {
+										"object": "Enemies"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 962779035171120
+								}
+							],
+							"sid": 742595454450571
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 764320837648811,
+									"parameters": {
+										"object": "Hazards"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 328370941134108
+								}
+							],
+							"sid": 526799912698043
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 943924569723194,
+									"parameters": {
+										"object": "Platform"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 507391464088310
+								}
+							],
+							"sid": 265416013181951
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "RangedPlayer",
+									"sid": 569004803658284,
+									"parameters": {
+										"object": "CharacterChange"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Players",
+									"sid": 584729889264106
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "CharacterChangeSpawnPoint",
+									"sid": 271988346569394,
+									"parameters": {
+										"object": "RangedPlayer",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 944538348160140
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 773211043691697,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Bullet",
+									"sid": 714757059071339,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 917546091906249
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 800335618314977,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Bullet",
+									"sid": 189040796620344,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 862276889782900
 						}
 					],
 					"sid": 196522125907611
