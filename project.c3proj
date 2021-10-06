@@ -167,7 +167,11 @@
 			"Portal3",
 			"Portal4",
 			"CharacterChange",
-			"CharacterChangeSpawnPoint"
+			"CharacterChangeSpawnPoint",
+			"RangedSwitch",
+			"MeleeSwitch",
+			"SwitchPlatforms",
+			"Speed"
 		],
 		"subfolders": []
 	},

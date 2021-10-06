@@ -1,0 +1,67 @@
+{
+	"name": "RangedSwitch",
+	"plugin-id": "Sprite",
+	"sid": 871392640732690,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "isPressed",
+			"type": "boolean",
+			"desc": "",
+			"sid": 342411168084215
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 90,
+						"height": 155,
+						"originX": 1.1222222222222222,
+						"originY": 0.4774193548387097,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1597572,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 198655166240945,
+				"name": "Unpressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5263881,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 989402772450620,
+				"name": "Pressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

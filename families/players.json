@@ -14,6 +14,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 932663063246292
+		},
+		{
+			"name": "FacingLeft",
+			"type": "boolean",
+			"desc": "",
+			"sid": 221638568989671
 		}
 	],
 	"behaviorTypes": [

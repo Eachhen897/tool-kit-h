@@ -1,10 +1,16 @@
 {
-	"name": "CharacterChange",
+	"name": "SwitchPlatforms",
 	"plugin-id": "Sprite",
-	"sid": 158576457902342,
+	"sid": 663524018007622,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 715933262211690
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -18,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9256283,
+						"imageSpriteId": 7099090,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 592382266093928,
+				"sid": 970422150568387,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

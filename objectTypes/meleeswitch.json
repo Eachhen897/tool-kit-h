@@ -1,0 +1,60 @@
+{
+	"name": "MeleeSwitch",
+	"plugin-id": "Sprite",
+	"sid": 250204466826668,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 90,
+						"height": 155,
+						"originX": 1.1222222222222222,
+						"originY": 0.4774193548387097,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9492918,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 489221958128285,
+				"name": "Unpressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 56,
+						"height": 155,
+						"originX": 1.8035714285714286,
+						"originY": 0.4774193548387097,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4916447,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 395606748321450,
+				"name": "Pressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

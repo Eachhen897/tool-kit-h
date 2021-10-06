@@ -1,7 +1,7 @@
 {
-	"name": "CharacterChange",
+	"name": "Speed",
 	"plugin-id": "Sprite",
-	"sid": 158576457902342,
+	"sid": 394987586849331,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9256283,
+						"imageSpriteId": 7120293,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 592382266093928,
+				"sid": 540017072712708,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

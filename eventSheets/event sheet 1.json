@@ -22,6 +22,24 @@
 			"sid": 590563463811522
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 677403068777056
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 708445693860233
+				}
+			],
+			"sid": 929183930103005
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Collectables ",
@@ -57,17 +75,17 @@
 								{
 									"id": "set-text",
 									"objectClass": "CoinsCollectedText",
-									"sid": 946598058513221,
+									"sid": 266805605621521,
 									"parameters": {
-										"text": "CoinsCollected"
+										"text": "\"Coins: \" & CoinsCollected"
 									}
 								},
 								{
 									"id": "set-text",
 									"objectClass": "HealthCollectedText",
-									"sid": 271014502665297,
+									"sid": 793437374730128,
 									"parameters": {
-										"text": "Health"
+										"text": "\"Health: \" & Health"
 									}
 								}
 							],
@@ -349,19 +367,12 @@
 									}
 								},
 								{
-									"id": "set-mirrored",
-									"objectClass": "HurtBox",
-									"sid": 243884002200355,
+									"id": "set-boolean-instvar",
+									"objectClass": "Players",
+									"sid": 713059088389958,
 									"parameters": {
-										"state": "mirrored"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "Bullet",
-									"sid": 719588647420476,
-									"parameters": {
-										"state": "mirrored"
+										"instance-variable": "FacingLeft",
+										"value": "true"
 									}
 								}
 							],
@@ -398,19 +409,12 @@
 									}
 								},
 								{
-									"id": "set-mirrored",
-									"objectClass": "HurtBox",
-									"sid": 614810169610322,
+									"id": "set-boolean-instvar",
+									"objectClass": "Players",
+									"sid": 235343245597105,
 									"parameters": {
-										"state": "not-mirrored"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "Bullet",
-									"sid": 643875811045987,
-									"parameters": {
-										"state": "not-mirrored"
+										"instance-variable": "FacingLeft",
+										"value": "false"
 									}
 								}
 							],
@@ -539,7 +543,8 @@
 									"sid": 302484299661422
 								}
 							],
-							"sid": 818482371277672
+							"sid": 818482371277672,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -592,11 +597,36 @@
 									"sid": 685817139780727
 								}
 							],
-							"sid": 860205312025503
+							"sid": 860205312025503,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
 							"text": "To Spawn a Melee Player, click the melee button"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 521507694436385
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "PlayerSpawn",
+									"sid": 492387092403795,
+									"parameters": {
+										"object": "RangedPlayer",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 700638771593159
 						}
 					],
 					"sid": 152877055272807
@@ -624,42 +654,99 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 940765224280567,
+							"children": [
 								{
-									"id": "spawn-another-object",
-									"objectClass": "MeleePlayer",
-									"sid": 531230059658926,
-									"parameters": {
-										"object": "HurtBox",
-										"layer": "0",
-										"image-point": "1",
-										"create-hierarchy": false
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Players",
+											"sid": 316674615828889,
+											"parameters": {
+												"instance-variable": "FacingLeft"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "MeleePlayer",
+											"sid": 153506017557776,
+											"parameters": {
+												"object": "HurtBox",
+												"layer": "0",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 194148707536015,
+											"parameters": {
+												"seconds": "0.05"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "HurtBox",
+											"sid": 530557383356304
+										}
+									],
+									"sid": 733006073286065
 								},
 								{
-									"id": "set-visible",
-									"objectClass": "HurtBox",
-									"sid": 283077098713593,
-									"disabled": true,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 942267281575022,
-									"parameters": {
-										"seconds": "0.05"
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "HurtBox",
-									"sid": 191894614050378
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Players",
+											"sid": 142948267457098,
+											"parameters": {
+												"instance-variable": "FacingLeft"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "MeleePlayer",
+											"sid": 670461850488199,
+											"parameters": {
+												"object": "HurtBox",
+												"layer": "0",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "HurtBox",
+											"sid": 187551177110914,
+											"parameters": {
+												"state": "mirrored"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 593688009137632,
+											"parameters": {
+												"seconds": "0.05"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "HurtBox",
+											"sid": 331933858472589
+										}
+									],
+									"sid": 803192790281050
 								}
-							],
-							"sid": 940765224280567
+							]
 						},
 						{
 							"eventType": "block",
@@ -735,6 +822,63 @@
 								}
 							],
 							"sid": 702433175438174
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HurtBox",
+									"sid": 405541227594191,
+									"parameters": {
+										"object": "MeleeSwitch"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "MeleeSwitch",
+									"sid": 983565826159997,
+									"parameters": {
+										"animation": "\"Pressed\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Portal1",
+									"sid": 620244550779543,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Portal1",
+									"sid": 656716139749985,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Portal3",
+									"sid": 581372662869336,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Portal3",
+									"sid": 131576880942150,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								}
+							],
+							"sid": 371189623136757
 						}
 					],
 					"sid": 832022858366017
@@ -771,51 +915,153 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 948181880911813,
+							"children": [
 								{
-									"id": "spawn-another-object",
-									"objectClass": "RangedPlayer",
-									"sid": 583518051756864,
-									"parameters": {
-										"object": "Bullet",
-										"layer": "0",
-										"image-point": "1",
-										"create-hierarchy": false
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Players",
+											"sid": 888745949492741,
+											"parameters": {
+												"instance-variable": "FacingLeft"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "RangedPlayer",
+											"sid": 363715678386107,
+											"parameters": {
+												"object": "Bullet",
+												"layer": "0",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "Bullet",
+											"sid": 416038279248857,
+											"parameters": {
+												"state": "mirrored"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Bullet",
+											"sid": 136867363885306,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Bullet",
+											"sid": 428192422870699,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "400"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "Bullet",
+											"sid": 429437317190148,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "180"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 737233564769756,
+											"parameters": {
+												"seconds": "2"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Bullet",
+											"sid": 969288254811666
+										}
+									],
+									"sid": 737703156195076
 								},
 								{
-									"id": "set-enabled",
-									"objectClass": "Bullet",
-									"sid": 455253194741481,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-speed",
-									"objectClass": "Bullet",
-									"sid": 805647210862562,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"speed": "400"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 846758418475168,
-									"parameters": {
-										"seconds": "2"
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Bullet",
-									"sid": 763272920916399
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Players",
+											"sid": 536326398064014,
+											"parameters": {
+												"instance-variable": "FacingLeft"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "RangedPlayer",
+											"sid": 137702119566320,
+											"parameters": {
+												"object": "Bullet",
+												"layer": "0",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Bullet",
+											"sid": 878228605027350,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Bullet",
+											"sid": 270411417957962,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "400"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "Bullet",
+											"sid": 928054095683752,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 344746318394569,
+											"parameters": {
+												"seconds": "2"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Bullet",
+											"sid": 316073758825530
+										}
+									],
+									"sid": 999786677513111
 								}
-							],
-							"sid": 948181880911813
+							]
 						},
 						{
 							"eventType": "block",
@@ -927,9 +1173,9 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "CharacterChangeSpawnPoint",
-									"sid": 271988346569394,
+									"sid": 899096084558901,
 									"parameters": {
-										"object": "RangedPlayer",
+										"object": "MeleePlayer",
 										"layer": "0",
 										"image-point": "0",
 										"create-hierarchy": false
@@ -985,6 +1231,163 @@
 								}
 							],
 							"sid": 862276889782900
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 388926628478970,
+									"parameters": {
+										"object": "RangedSwitch"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 114678562745371
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "RangedSwitch",
+									"sid": 547263456316937,
+									"parameters": {
+										"animation": "\"Pressed\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Portal2",
+									"sid": 986383804371999,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Portal2",
+									"sid": 240029863174077,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Portal4",
+									"sid": 918572246406694,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Portal4",
+									"sid": 120457623670473,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SwitchPlatforms",
+									"sid": 784635626895674,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "SwitchPlatforms",
+									"sid": 598728989510445,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 683899883507949
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RangedSwitch",
+									"sid": 333859191745899,
+									"parameters": {
+										"instance-variable": "isPressed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 414728798829704,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RangedSwitch",
+									"sid": 849174925881880,
+									"parameters": {
+										"instance-variable": "isPressed",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 906584121704665,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RangedSwitch",
+									"sid": 612675760184774,
+									"parameters": {
+										"instance-variable": "isPressed"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RangedSwitch",
+									"sid": 253230841174294,
+									"parameters": {
+										"animation": "\"Unpressed\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SwitchPlatforms",
+									"sid": 848156105572727,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "SwitchPlatforms",
+									"sid": 378035320057991,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 762176648708356,
+							"disabled": true
 						}
 					],
 					"sid": 196522125907611
@@ -1201,122 +1604,142 @@
 			"sid": 356561616048768
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Portals",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 907688100264935
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Players",
+							"sid": 461056861667344,
+							"parameters": {
+								"object": "Portal1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Players",
+							"sid": 976151598901551,
+							"parameters": {
+								"object": "Portal3",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 661466308539208
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Players",
+							"sid": 249736570129660,
+							"parameters": {
+								"object": "Portal2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Players",
+							"sid": 122576522948281,
+							"parameters": {
+								"object": "Portal4",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 606715776795401
 				}
 			],
-			"actions": [
-				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 345780749525678
-				}
-			],
-			"sid": 684375146269694
+			"sid": 903170818135750
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Powerups",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "RangedPlayer",
-					"sid": 186559298807440,
-					"parameters": {
-						"object": "Portal1"
-					}
+					"eventType": "group",
+					"disabled": false,
+					"title": "Speed",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Players",
+									"sid": 703600867093227,
+									"parameters": {
+										"object": "Speed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Speed",
+									"sid": 474059692434796
+								},
+								{
+									"id": "flash",
+									"objectClass": "Players",
+									"sid": 564527779520359,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Players",
+									"sid": 420271772233338,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "Players.Platform.MaxSpeed*2"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 919165668494659,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Players",
+									"sid": 107059939955480,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "300"
+									}
+								}
+							],
+							"sid": 484737788274656
+						}
+					],
+					"sid": 445765325400717
 				}
 			],
-			"actions": [
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "RangedPlayer",
-					"sid": 412329355993696,
-					"parameters": {
-						"object": "Portal3",
-						"image-point-optional": "0"
-					}
-				}
-			],
-			"sid": 292888904986243
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "MeleePlayer",
-					"sid": 681986640156174,
-					"parameters": {
-						"object": "Portal1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "MeleePlayer",
-					"sid": 451942665871753,
-					"parameters": {
-						"object": "Portal3",
-						"image-point-optional": "0"
-					}
-				}
-			],
-			"sid": 988359554288832
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "RangedPlayer",
-					"sid": 426319379022270,
-					"parameters": {
-						"object": "Portal2"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "RangedPlayer",
-					"sid": 354237238974082,
-					"parameters": {
-						"object": "Portal4",
-						"image-point-optional": "0"
-					}
-				}
-			],
-			"sid": 825520180130909
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "MeleePlayer",
-					"sid": 303247824674227,
-					"parameters": {
-						"object": "Portal2"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "MeleePlayer",
-					"sid": 371947508064784,
-					"parameters": {
-						"object": "Portal4",
-						"image-point-optional": "0"
-					}
-				}
-			],
-			"sid": 603380905926434
+			"sid": 458784591165329
 		}
 	],
 	"sid": 991865712413623
