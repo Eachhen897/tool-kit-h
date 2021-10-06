@@ -6,7 +6,6 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Collectable1",
-		"Collectable2"
+		"Collectable1"
 	]
 }

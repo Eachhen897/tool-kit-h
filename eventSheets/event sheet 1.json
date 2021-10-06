@@ -145,36 +145,6 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "Collectable1",
-									"sid": 966825481409871,
-									"parameters": {
-										"object": "BouncePlayer"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Collectable1",
-									"sid": 184637268746329
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 525849474317952,
-									"parameters": {
-										"variable": "CoinsCollected",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 385688413251558
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "Collectable1",
 									"sid": 263304503773003,
 									"parameters": {
 										"object": "RangedPlayer"
@@ -238,36 +208,6 @@
 								}
 							],
 							"sid": 336081425582499
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "HealthCollectable",
-									"sid": 453014803578119,
-									"parameters": {
-										"object": "BouncePlayer"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "HealthCollectable",
-									"sid": 650722034418163
-								},
-								{
-									"id": "add-to-instvar",
-									"objectClass": "BouncePlayer",
-									"sid": 367429414668030,
-									"parameters": {
-										"instance-variable": "Health",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 508942969422415
 						},
 						{
 							"eventType": "block",
@@ -454,163 +394,6 @@
 								}
 							],
 							"sid": 936007424609274
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 542626632563904,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "BuBounce"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "RangedPlayer",
-									"sid": 395682635090912
-								},
-								{
-									"id": "destroy",
-									"objectClass": "BouncePlayer",
-									"sid": 226157437064064
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "PlayerSpawn",
-									"sid": 522771869690675,
-									"parameters": {
-										"object": "BouncePlayer",
-										"layer": "0",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-unfocused",
-									"objectClass": "BuBounce",
-									"sid": 649618748695667
-								}
-							],
-							"sid": 167332788755073,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "To Spawn a Bounce Player (Jump on top of enemy to kill them), click the bounce button"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 676001314467840,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "BuRanged"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "MeleePlayer",
-									"sid": 305146358078639
-								},
-								{
-									"id": "destroy",
-									"objectClass": "RangedPlayer",
-									"sid": 136081112119365
-								},
-								{
-									"id": "destroy",
-									"objectClass": "BouncePlayer",
-									"sid": 563830268787168
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "PlayerSpawn",
-									"sid": 672562503579852,
-									"parameters": {
-										"object": "RangedPlayer",
-										"layer": "0",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-unfocused",
-									"objectClass": "BuRanged",
-									"sid": 302484299661422
-								}
-							],
-							"sid": 818482371277672,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "To Spawn a Ranged Player, click the ranged button"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 846968741441635,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "BuMelee"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "MeleePlayer",
-									"sid": 682720989487857
-								},
-								{
-									"id": "destroy",
-									"objectClass": "RangedPlayer",
-									"sid": 120368379534646
-								},
-								{
-									"id": "destroy",
-									"objectClass": "BouncePlayer",
-									"sid": 513747047979795
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "PlayerSpawn",
-									"sid": 249506583282438,
-									"parameters": {
-										"object": "MeleePlayer",
-										"layer": "0",
-										"image-point": "1",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-unfocused",
-									"objectClass": "BuMelee",
-									"sid": 685817139780727
-								}
-							],
-							"sid": 860205312025503,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "To Spawn a Melee Player, click the melee button"
 						},
 						{
 							"eventType": "block",
@@ -906,15 +689,6 @@
 						}
 					],
 					"sid": 832022858366017
-				},
-				{
-					"eventType": "group",
-					"disabled": true,
-					"title": "Bounce",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [],
-					"sid": 155045687441934
 				},
 				{
 					"eventType": "group",
@@ -1350,84 +1124,6 @@
 								}
 							],
 							"sid": 683899883507949
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "RangedSwitch",
-									"sid": 333859191745899,
-									"parameters": {
-										"instance-variable": "isPressed"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 414728798829704,
-									"parameters": {
-										"seconds": "3"
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "RangedSwitch",
-									"sid": 849174925881880,
-									"parameters": {
-										"instance-variable": "isPressed",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 906584121704665,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "RangedSwitch",
-									"sid": 612675760184774,
-									"parameters": {
-										"instance-variable": "isPressed"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "RangedSwitch",
-									"sid": 253230841174294,
-									"parameters": {
-										"animation": "\"Unpressed\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "SwitchPlatforms",
-									"sid": 848156105572727,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "SwitchPlatforms",
-									"sid": 378035320057991,
-									"behaviorType": "Solid",
-									"parameters": {
-										"state": "disabled"
-									}
-								}
-							],
-							"sid": 762176648708356,
-							"disabled": true
 						}
 					],
 					"sid": 196522125907611
