@@ -8,16 +8,16 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Keyboard",
+			"id": "Sprite",
+			"name": "Sprite",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
+			"id": "Keyboard",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
@@ -138,6 +138,7 @@
 	"uniqueId": "z0alyj1m5lh",
 	"objectTypes": {
 		"items": [
+			"BouncePlayer",
 			"Keyboard",
 			"Platform",
 			"RangedPlayer",
@@ -148,6 +149,10 @@
 			"BuMelee",
 			"BuRanged",
 			"BuBounce",
+			"smallspikes",
+			"Smallwoodspikes",
+			"Spike",
+			"WoodSpikes",
 			"Audio",
 			"Mouse",
 			"MeleePlayer",
@@ -158,6 +163,7 @@
 			"HealthCollectedText",
 			"Portal1",
 			"Portal2",
+			"Collectable2",
 			"Portal3",
 			"Portal4",
 			"CharacterChange",

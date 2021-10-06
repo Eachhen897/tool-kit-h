@@ -1,7 +1,7 @@
 {
-	"name": "CharacterChangeSpawnPoint",
+	"name": "BouncePlayer",
 	"plugin-id": "Sprite",
-	"sid": 670942088889475,
+	"sid": 127601593110484,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6559225,
+						"imageSpriteId": 3256480,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 552596026979335,
+				"sid": 112254965610116,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
