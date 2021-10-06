@@ -6,10 +6,6 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"smallspikes",
-		"Spike",
-		"Smallwoodspikes",
-		"WoodSpikes",
 		"Hazard"
 	]
 }

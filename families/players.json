@@ -41,7 +41,6 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"BouncePlayer",
 		"RangedPlayer",
 		"MeleePlayer"
 	]
