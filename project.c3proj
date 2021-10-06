@@ -165,7 +165,9 @@
 			"RangedSwitch",
 			"MeleeSwitch",
 			"SwitchPlatforms",
-			"Speed"
+			"Speed",
+			"SpaceBG",
+			"CaveBG"
 		],
 		"subfolders": []
 	},

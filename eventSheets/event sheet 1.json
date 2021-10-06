@@ -35,6 +35,14 @@
 					"id": "reset-global-variables",
 					"objectClass": "System",
 					"sid": 708445693860233
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CaveBG",
+					"sid": 124502001780140,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 929183930103005
@@ -733,6 +741,22 @@
 										"image-point": "0",
 										"create-hierarchy": false
 									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "CaveBG",
+									"sid": 432790477368191,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SpaceBG",
+									"sid": 400571765833302,
+									"parameters": {
+										"visibility": "visible"
+									}
 								}
 							],
 							"sid": 702433175438174
@@ -1084,6 +1108,22 @@
 										"layer": "0",
 										"image-point": "0",
 										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "CaveBG",
+									"sid": 633452251530239,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SpaceBG",
+									"sid": 439859981234962,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								}
 							],
