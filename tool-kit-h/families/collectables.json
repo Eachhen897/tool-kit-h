@@ -1,0 +1,11 @@
+{
+	"name": "Collectables",
+	"plugin-id": "Sprite",
+	"sid": 127249023331960,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Collectable1"
+	]
+}

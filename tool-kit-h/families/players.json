@@ -1,0 +1,47 @@
+{
+	"name": "Players",
+	"plugin-id": "Sprite",
+	"sid": 109608251290410,
+	"instanceVariables": [
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"sid": 785966171006995
+		},
+		{
+			"name": "Spawn",
+			"type": "number",
+			"desc": "",
+			"sid": 932663063246292
+		},
+		{
+			"name": "FacingLeft",
+			"type": "boolean",
+			"desc": "",
+			"sid": 221638568989671
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 809407847473370
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 951951175176974
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 948593145314313
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"RangedPlayer",
+		"MeleePlayer"
+	]
+}
