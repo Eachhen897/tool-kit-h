@@ -184,14 +184,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1",
-			"Layout 2"
+			"Demo Level",
+			"Layout 2",
+			"Level One"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Main Event Sheet"
 		],
 		"subfolders": []
 	},
