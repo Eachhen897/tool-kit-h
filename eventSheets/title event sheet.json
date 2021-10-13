@@ -1,0 +1,27 @@
+{
+	"name": "Title Event Sheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Start",
+					"sid": 257480574998886
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 785885037332028,
+					"parameters": {
+						"layout": "Level One"
+					}
+				}
+			],
+			"sid": 708942200959974
+		}
+	],
+	"sid": 279029763396314
+}

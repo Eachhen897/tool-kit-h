@@ -426,10 +426,10 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "PlayerSpawn",
-									"sid": 492387092403795,
+									"sid": 622499394651765,
 									"parameters": {
 										"object": "RangedPlayer",
-										"layer": "0",
+										"layer": "1",
 										"image-point": "0",
 										"create-hierarchy": false
 									}
@@ -483,10 +483,10 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "MeleePlayer",
-											"sid": 153506017557776,
+											"sid": 743169085698391,
 											"parameters": {
 												"object": "HurtBox",
-												"layer": "0",
+												"layer": "1",
 												"image-point": "1",
 												"create-hierarchy": false
 											}
@@ -523,10 +523,10 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "MeleePlayer",
-											"sid": 670461850488199,
+											"sid": 375886148129514,
 											"parameters": {
 												"object": "HurtBox",
-												"layer": "0",
+												"layer": "1",
 												"image-point": "1",
 												"create-hierarchy": false
 											}
@@ -621,10 +621,10 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "CharacterChangeSpawnPoint",
-									"sid": 981234417518270,
+									"sid": 819876553110225,
 									"parameters": {
 										"object": "RangedPlayer",
-										"layer": "0",
+										"layer": "1",
 										"image-point": "0",
 										"create-hierarchy": false
 									}
@@ -731,7 +731,19 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "RangedPlayer",
+									"sid": 674526404816354,
+									"parameters": {
+										"object": "Bullet",
+										"layer": "1",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
 							"sid": 948181880911813,
 							"children": [
 								{
@@ -989,10 +1001,10 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "CharacterChangeSpawnPoint",
-									"sid": 899096084558901,
+									"sid": 388266916634457,
 									"parameters": {
 										"object": "MeleePlayer",
-										"layer": "0",
+										"layer": "1",
 										"image-point": "0",
 										"create-hierarchy": false
 									}
@@ -1020,11 +1032,11 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 773211043691697,
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Players",
+									"sid": 401814031101937,
 									"parameters": {
-										"key": 65
+										"instance-variable": "FacingLeft"
 									}
 								}
 							],
@@ -1038,7 +1050,8 @@
 									}
 								}
 							],
-							"sid": 917546091906249
+							"sid": 917546091906249,
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1062,7 +1075,8 @@
 									}
 								}
 							],
-							"sid": 862276889782900
+							"sid": 862276889782900,
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1142,6 +1156,28 @@
 								}
 							],
 							"sid": 683899883507949
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 699219549583724
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "Bullet",
+									"sid": 652318789927518,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "250"
+									}
+								}
+							],
+							"sid": 915745336304211
 						}
 					],
 					"sid": 196522125907611
@@ -1503,6 +1539,21 @@
 				}
 			],
 			"sid": 458784591165329
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "MeleePlayer",
+					"sid": 885068595273356,
+					"parameters": {
+						"object": "Exit"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 898839982477308
 		}
 	],
 	"sid": 991865712413623

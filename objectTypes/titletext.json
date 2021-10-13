@@ -1,14 +1,14 @@
 {
-	"name": "CoinsCollectedText",
+	"name": "TitleText",
 	"plugin-id": "Text",
-	"sid": 471953929273745,
+	"sid": 951867961766554,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "scrollto",
 			"name": "ScrollTo",
-			"sid": 513380298314905
+			"sid": 829816643013472
 		}
 	],
 	"effectTypes": []

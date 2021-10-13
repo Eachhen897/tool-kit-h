@@ -4,6 +4,12 @@
 	"sid": 143862445852463,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 283237764591145
+		}
+	],
 	"effectTypes": []
 }
