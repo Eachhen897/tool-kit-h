@@ -21,6 +21,30 @@
 				}
 			],
 			"sid": 708942200959974
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 690261996038250
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 943665170715084,
+					"parameters": {
+						"audio-file": "Level 1 music ",
+						"loop": "looping",
+						"volume": "-3",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 229274853645777
 		}
 	],
 	"sid": 279029763396314

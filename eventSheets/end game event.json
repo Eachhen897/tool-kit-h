@@ -1,0 +1,27 @@
+{
+	"name": "End game event",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "BuBounce",
+					"sid": 737249660245358
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 932176643856827,
+					"parameters": {
+						"layout": "Title Screen"
+					}
+				}
+			],
+			"sid": 918331269888495
+		}
+	],
+	"sid": 253440041478569
+}

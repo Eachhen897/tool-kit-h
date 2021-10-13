@@ -104,16 +104,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Platform",
-			"name": "Platform",
+			"id": "Flash",
+			"name": "Flash",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Flash",
-			"name": "Flash",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
@@ -178,7 +178,10 @@
 			"CaveBG",
 			"TitleText",
 			"Start",
-			"Exit"
+			"Exit",
+			"Text",
+			"PlayAgain",
+			"Button"
 		],
 		"subfolders": []
 	},
@@ -198,14 +201,17 @@
 			"Layout 2",
 			"Level One",
 			"Title Screen",
-			"Level 2 (WIP)"
+			"Level 2 (WIP)",
+			"end game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Main Event Sheet",
-			"Title Event Sheet"
+			" Level 1 Event",
+			"Title Event Sheet",
+			"Level 2 event",
+			"End game event"
 		],
 		"subfolders": []
 	},
@@ -215,11 +221,38 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Laser Gun Sound Effect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 332687878665127
+				},
+				{
+					"name": "Dimension Portal Sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 558856500473672
+				},
+				{
+					"name": "Title music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 625416274920176
+				},
+				{
+					"name": "Town Portal Cast (Sound Effect) _ Diablo II.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 617371781210941
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "Level 1 music .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 185967889787897
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
