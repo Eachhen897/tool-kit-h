@@ -119,6 +119,14 @@
 			"bundled": false
 		},
 		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
+		},
+		{
 			"type": "effect",
 			"id": "swirl",
 			"name": "Swirl",
@@ -167,7 +175,10 @@
 			"SwitchPlatforms",
 			"Speed",
 			"SpaceBG",
-			"CaveBG"
+			"CaveBG",
+			"TitleText",
+			"Start",
+			"Exit"
 		],
 		"subfolders": []
 	},
@@ -184,15 +195,17 @@
 	},
 	"layouts": {
 		"items": [
-			"Demo Level",
 			"Layout 2",
-			"Level One"
+			"Level One",
+			"Title Screen",
+			"Level 2 (WIP)"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Main Event Sheet"
+			"Main Event Sheet",
+			"Title Event Sheet"
 		],
 		"subfolders": []
 	},

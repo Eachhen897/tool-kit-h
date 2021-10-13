@@ -1,0 +1,62 @@
+{
+	"name": "MeleePlayer",
+	"plugin-id": "Sprite",
+	"sid": 741678982925558,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo2",
+			"sid": 672177352103932
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 59,
+						"height": 59,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1793717,
+						"collisionPoly": {
+							"points": [
+								0.016949152542372836,
+								0.01694915254237288,
+								0.9830508474576272,
+								0.01694915254237288,
+								0.9830508474576272,
+								0.9830508474576272,
+								0.016949152542372836,
+								0.9830508474576272
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Attack",
+								"x": 1,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 621602850439954,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

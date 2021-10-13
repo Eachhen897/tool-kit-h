@@ -1,0 +1,62 @@
+{
+	"name": "RangedPlayer",
+	"plugin-id": "Sprite",
+	"sid": 258979848532589,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo2",
+			"sid": 859026128294938
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 57,
+						"height": 57,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9728429,
+						"collisionPoly": {
+							"points": [
+								0.017543859649122806,
+								0.017543859649122806,
+								0.9824561403508771,
+								0.017543859649122806,
+								0.9824561403508771,
+								0.9824561403508771,
+								0.017543859649122806,
+								0.9824561403508771
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "BulletPoint",
+								"x": 0.9824561403508771,
+								"y": 0.7719298245614035
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 170903049683994,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

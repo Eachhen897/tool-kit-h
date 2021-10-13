@@ -1,0 +1,57 @@
+{
+	"name": "Portal2",
+	"plugin-id": "Sprite",
+	"sid": 446766911170635,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 947527544890475
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 210607306838648
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "swirl",
+			"name": "Swirl"
+		},
+		{
+			"effectId": "pulse",
+			"name": "Pulse"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 162,
+						"height": 212,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6592941,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 320761424026807,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

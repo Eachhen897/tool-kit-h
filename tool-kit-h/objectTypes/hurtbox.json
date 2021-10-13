@@ -1,0 +1,56 @@
+{
+	"name": "HurtBox",
+	"plugin-id": "Sprite",
+	"sid": 301325789474917,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 38,
+						"height": 97,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9862549,
+						"collisionPoly": {
+							"points": [
+								0.02631578947368421,
+								0.010309278350515464,
+								0.9736842105263158,
+								0.010309278350515464,
+								0.9736842105263158,
+								0.9896907216494846,
+								0.02631578947368421,
+								0.9896907216494846
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 764105757816122,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
